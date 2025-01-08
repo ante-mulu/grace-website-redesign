@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +18,8 @@ const Training = () => {
     "/assets/11.jpg",
     "/assets/12.jpg",
   ];
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const settings = {
     dots: true,
@@ -52,6 +55,8 @@ const Training = () => {
       },
     ],
   };
+
+  const closeModal = () => setSelectedImage(null);
 
   return (
     <div className="bg-gray-50">
@@ -89,7 +94,8 @@ const Training = () => {
               <img
                 src={photo}
                 alt={`Training Highlight ${index + 1}`}
-                className="rounded-lg shadow-lg w-full h-60 object-cover"
+                className="rounded-lg shadow-lg w-full h-60 object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+                onClick={() => setSelectedImage(photo)} // Set the selected image on click
               />
             </div>
           ))}
@@ -107,14 +113,35 @@ const Training = () => {
               <img
                 src={photo}
                 alt={`Second Training Highlight ${index + 1}`}
-                className="rounded-lg shadow-lg w-full h-60 object-cover"
+                className="rounded-lg shadow-lg w-full h-60 object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+                onClick={() => setSelectedImage(photo)} // Set the selected image on click
               />
             </div>
           ))}
         </Slider>
       </section>
 
+      {/* Zoom Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+          <div className="relative">
+            <button
+              className="absolute top-0 right-0 mt-2 mr-2 text-white text-2xl"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <img
+              src={selectedImage}
+              alt="Zoomed"
+              className="max-w-full max-h-screen rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Call to Action Section */}
+      {/* Uncomment this section to include the Call to Action */}
       {/* <section className="bg-orange-600 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-white text-4xl font-semibold mb-4">
