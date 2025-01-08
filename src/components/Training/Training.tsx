@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
 const Training = () => {
-  const photos = [
+  const photos: string[] = [
     "/assets/1.jpg",
     "/assets/3.jpg",
     "/assets/4.jpg",
@@ -19,7 +19,7 @@ const Training = () => {
     "/assets/12.jpg",
   ];
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // Allow string or null
 
   const settings = {
     dots: true,
@@ -141,7 +141,7 @@ const Training = () => {
       )}
 
       {/* Call to Action Section */}
-      {/* <section className="bg-orange-600 py-12">
+      <section className="bg-orange-600 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-white text-4xl font-semibold mb-4">
             Join our 2nd Batch Training Program
@@ -157,7 +157,7 @@ const Training = () => {
             Register
           </Link>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
