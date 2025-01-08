@@ -39,10 +39,12 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 py-12 px-6 lg:px-24 lg:ml-20 min-h-screen relative">
         {/* Left Section */}
         <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
-          <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight lg:leading-snug">
-            GraceERP Consultancy PLC: Your Trusted ERP Implementer and Business
-            Consultant
+          <h2 className="text-4xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight lg:leading-snug">
+            GraceERP Consultancy PLC
           </h2>
+          <h3 className="mt-2 text-2xl text-gray-800">
+            Your Trusted ERP Implementer and Business Consultant
+          </h3>
 
           <p className="mt-4 text-lg text-gray-600">
             Providing customized ERP solutions for your business needs.
@@ -50,7 +52,7 @@ const Home = () => {
 
           <Link to="/contact-us">
             <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-              <button className="bg-orange-600 hover:scale-105 text-white py-3 px-8 rounded-full shadow-lg transition-all duration-300 ease-in-out">
+              <button className="bg-orange-600 hover:bg-orange-700 text-white py-3 px-8 rounded-full shadow-lg transition-all duration-300 ease-in-out">
                 Contact Us
               </button>
             </div>
