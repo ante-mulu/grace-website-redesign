@@ -1,8 +1,8 @@
-import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Training = () => {
   const photos: string[] = [
@@ -18,8 +18,6 @@ const Training = () => {
     "/assets/11.jpg",
     "/assets/12.jpg",
   ];
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(null); // Allow string or null
 
   const settings = {
     dots: true,
@@ -56,14 +54,12 @@ const Training = () => {
     ],
   };
 
-  const closeModal = () => setSelectedImage(null);
-
   return (
     <div className="bg-gray-50">
       {/* Title Section */}
-      <div className="flex items-center justify-center py-10">
+      <div className="flex items-center justify-center">
         <h1 className="text-gray-600 text-5xl font-bold text-center">
-          GraceERP Consultancy PLC recently concluded its 1st Batch Odoo Functional Training Program
+          GraceERP Consultancy PLC recently concluded its 1st Batch Odoo Functional Training Program  
         </h1>
       </div>
 
@@ -76,14 +72,14 @@ const Training = () => {
           GraceERP Consultancy PLC recently concluded its inaugural Odoo Functional Training Program, a two-month intensive course designed to equip participants with the skills needed to navigate and optimize Odoo, the world's leading ERP system.
         </p>
         <p className="text-lg text-gray-600 mb-6">
-          As a pioneer in Odoo implementation and training in Ethiopia, GraceERP is committed to fostering a vibrant Odoo community and driving business growth through technology.
+          As a pioneer in Odoo implementation and training in Ethiopia, GraceERP is committed to fostering a vibrant Odoo community and driving business growth through technology. Our training programs are tailored to meet the evolving needs of the market, providing professionals with the knowledge and expertise they need to excel in their roles.
         </p>
         <p className="text-lg text-gray-600 mb-6">
           Whether you're looking to enhance your Odoo skills or start a new career path, join our upcoming training sessions and discover the power of Odoo to unlock your business's full potential.
         </p>
       </section>
 
-      {/* 1st Batch Training Highlights Section */}
+      {/* Carousel Section */}
       <section className="max-w-7xl mx-auto py-8 px-6">
         <h3 className="text-3xl font-semibold text-center text-gray-800 mb-10">
           1st Batch Training Highlights
@@ -94,57 +90,18 @@ const Training = () => {
               <img
                 src={photo}
                 alt={`Training Highlight ${index + 1}`}
-                className="rounded-lg shadow-lg w-full h-60 object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
-                onClick={() => setSelectedImage(photo)}
+                className="rounded-lg shadow-lg w-full h-60 object-cover"
               />
             </div>
           ))}
         </Slider>
       </section>
-
-      {/* 2nd Batch Training Highlights Section */}
-      <section className="max-w-7xl mx-auto py-8 px-6">
-        <h3 className="text-3xl font-semibold text-center text-gray-800 mb-10">
-          2nd Batch Training Highlights
-        </h3>
-        <Slider {...settings}>
-          {photos.map((photo, index) => (
-            <div key={index} className="px-2">
-              <img
-                src={photo}
-                alt={`Second Training Highlight ${index + 1}`}
-                className="rounded-lg shadow-lg w-full h-60 object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
-                onClick={() => setSelectedImage(photo)}
-              />
-            </div>
-          ))}
-        </Slider>
-      </section>
-
-      {/* Zoom Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-          <div className="relative">
-            <button
-              className="absolute top-0 right-0 mt-2 mr-2 text-white text-2xl"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
-            <img
-              src={selectedImage}
-              alt="Zoomed"
-              className="max-w-full max-h-screen rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-      )}
 
       {/* Call to Action Section */}
       <section className="bg-orange-600 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-white text-4xl font-semibold mb-4">
-            Join our 2nd Batch Training Program
+            Join our 2nd batch training program
           </h3>
           <p className="text-white text-lg mb-8">
             Take the next step in your career and become an Odoo expert with our upcoming training sessions. Learn from industry leaders and unlock your potential.
